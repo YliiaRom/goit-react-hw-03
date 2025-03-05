@@ -1,0 +1,15 @@
+.contactList *:not(:last-child) {
+  margin-bottom: 20px;
+}
+.contactList {
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; */
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr 1fr);
+  gap: 12px; */
+  /* max-width: 95%;
+  padding: 10px; */
+  max-width: 100%;
+  margin: 0 auto;
+}

@@ -1,0 +1,227 @@
+.card {
+  font-size: 20px;
+  position: relative;
+  padding: 10px 35px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  /* place-items: center; */
+  gap: 10px;
+  border: 1px solid transparent;
+
+  -o-border-image: linear-gradient(transparent, #ffe0a6, transparent) 1;
+  border-image: linear-gradient(transparent, #ffe0a6, transparent) 1;
+  border-width: 0 2px 0px 2px;
+  background: radial-gradient(
+      100% 61.73% at 100% 50%,
+      rgba(255, 224, 166, 0.05) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      91.09% 56.23% at 0% 50%,
+      rgba(255, 224, 166, 0.05) 0%,
+      transparent 100%
+    );
+  position: relative;
+  background-color: #390808;
+
+  margin: 10px;
+  margin-inline: auto;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 17px #181101;
+  /* aspect-ratio: 2 / 1; */
+  max-width: 550px;
+  min-width: 220px;
+  min-height: 80px;
+}
+
+.card:before,
+.card::after {
+  content: "";
+  position: absolute;
+  border: 1px solid transparent;
+  border: inherit;
+  z-index: -1;
+}
+.card::before {
+  inset: -1rem;
+  opacity: 15%;
+}
+.card::after {
+  inset: -2rem;
+  opacity: 5%;
+}
+.card .title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  background: linear-gradient(rgb(170, 170, 170), rgb(78, 78, 78));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.card p {
+  font-size: 28px;
+  background: radial-gradient(
+    47.3% 73.08% at 50% 94.23%,
+    rgba(255, 255, 255, 0.1) 5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border: 13px solid transparent;
+  -o-border-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.445) 0%,
+      rgba(0, 0, 0, 0) 100%
+    )
+    1;
+  border-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.445) 0%,
+      rgba(0, 0, 0, 0) 100%
+    )
+    1;
+  border-width: 0 0 3px 0;
+}
+.boxName {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.iconUser {
+  font-size: 70px;
+  color: #9d9c99;
+}
+
+.button {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.button {
+  position: relative;
+  cursor: pointer;
+
+  /* padding: 25px 25px; */
+  width: 100%;
+  background: radial-gradient(
+      100% 45% at 100% 50%,
+      rgba(255, 224, 166, 0.084) 0%,
+      rgba(115, 115, 115, 0) 100%
+    ),
+    radial-gradient(
+      100% 45% at 0% 50%,
+      rgba(255, 224, 166, 0.084) 0%,
+      rgba(115, 115, 115, 0) 100%
+    );
+  border: 1px solid transparent;
+  -o-border-image: linear-gradient(transparent, #ffe0a6, transparent) 1;
+  border-image: linear-gradient(transparent, #ffe0a6, transparent) 1;
+  border-width: 0 3px 0 3px;
+  text-align: center;
+  color: #ffe0a6;
+  font-size: 20px;
+  letter-spacing: 5px;
+  cursor: pointer;
+  /* overflow: hidden; */
+}
+
+.button:hover {
+  color: #000;
+
+  opacity: 0.7;
+  background: linear-gradient(
+    235deg,
+    transparent,
+    transparent,
+    transparent,
+    #3a2601 30%,
+    #ffe0a6 40%,
+    #f5dfb6 50%,
+    #f7d79c 70%,
+    transparent 100%,
+    transparent
+  );
+}
+
+@media screen and (max-width: 568px) {
+  .card {
+    max-width: 320px;
+    width: 100%;
+
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    min-height: auto;
+    gap: 12px;
+
+    margin-bottom: 40px;
+  }
+  .card .title {
+    font-size: 20px;
+    /* max-width: 200px; */
+    letter-spacing: 5px;
+  }
+  .card p {
+    font-size: 1rem;
+  }
+  .boxName {
+    align-items: center;
+  }
+  .boxName *:last-child {
+    text-align: end;
+  }
+  .iconUser {
+    font-size: 50px;
+    letter-spacing: 2px;
+    color: #9d9c99;
+  }
+  .button {
+    font-size: 1rem;
+    max-width: fit-content;
+    padding: 10px 10px;
+    letter-spacing: 2px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .card {
+    max-width: 200px;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 50%;
+  }
+  .card .title {
+    font-size: 18px;
+    /* max-width: 200px; */
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+  }
+  .card p {
+    font-size: 1rem;
+    letter-spacing: 1.1;
+  }
+  .boxName {
+    align-items: center;
+  }
+  .boxName *:last-child {
+    text-align: end;
+  }
+  .iconUser {
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #9d9c99;
+  }
+  .button {
+    font-size: 1rem;
+    max-width: fit-content;
+    padding: 10px 10px;
+    letter-spacing: 2px;
+  }
+}

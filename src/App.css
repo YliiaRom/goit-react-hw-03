@@ -1,0 +1,26 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  min-width: 100vw;
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+}
+html {
+  min-width: 100vw;
+}
+body {
+  /* background: #290000; */
+  background-color: #291111;
+  color: #a39292;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+html,
+body {
+  width: 100%;
+  min-height: 100vh; /* Чтобы фон всегда покрывал весь экран */
+  margin: 0;
+  padding: 0;
+  background-color: #291111;
+}

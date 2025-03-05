@@ -1,29 +1,18 @@
 import * as Yup from "yup";
+import { useId } from "react";
 // import { ErrorMessage } from "formik";
 import { nanoid } from "nanoid";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import css from "./ContactForm.module.css";
 export default function ContactForm({ onAdd }) {
-  //  { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
-  const idName = nanoid();
-  const idNumber = nanoid();
+  const idName = useId();
+  const idNumber = useId();
   const idCard = nanoid();
   const initialValues = {
     id: idCard,
     name: "",
     number: "",
   };
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   onAdd({
-  //     id: Date.now(),
-  //     name: event.target.elements.name.value,
-  //     number: event.target.elements.number.value,
-  //   });
-
-  //   event.target.reset();
-  // };
   const newValidateWidthYupCard = Yup.object().shape({
     id: Yup.string(),
     name: Yup.string()
@@ -35,11 +24,7 @@ export default function ContactForm({ onAdd }) {
       .required("Обов`язково до заповнення"),
   });
   const handleSubmitFormik = (values, actions) => {
-    // event.preventDefault();
-    // console.log(values);
-    // onAdd({ ...values, id: idCard });
-    onAdd(values);
-    // console.log(values);
+    onAdd({ ...values, id: idCard });
     actions.resetForm();
   };
   return (
@@ -67,14 +52,6 @@ export default function ContactForm({ onAdd }) {
           </button>
         </Form>
       </Formik>
-      {/* 
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor={idName}>Name</label>
-        <input type="text" id={idName} name="name" />
-        <label htmlFor={idNumber}>Number</label>
-        <input type="text" id={idNumber} name="number" />
-        <button type="submit">Add contact</button>
-      </form> */}
     </>
   );
 }
